@@ -7,7 +7,7 @@
     
     <body>
         <script>
-
+            //  Hidden field contains the current timestamp in millis when the page is loaded
             function setTimeStamp(){
                 document.getElementById("timeStamp").value = Date.now();
                 console.log("set time");
@@ -17,7 +17,8 @@
             function getTime() {
                 return Date.now();
             }
-    
+            
+            // Validate account name
             function isAccountNameValid(){
                 let accountName =  document.getElementById("accName").value;
                 if (accName.length === 0) {
@@ -44,7 +45,7 @@
                 return true;
             }
     
-    
+            // Only users aged 18 or older on the date of registration are valid
             function isAdult(){
                 let dateOfBirth = new Date(document.getElementById("dob").value);
                 let currentTime = new Date();
@@ -58,6 +59,7 @@
                 return age >= 18;
             }
     
+            // Validate password
             function isPasswordEqual(){
                 let pw1 = document.getElementById("password1").value;
                 let pw2 = document.getElementById("password2").value;
@@ -67,7 +69,8 @@
             }
 
             
-    
+            // Helpful alert to user of invalid form contents
+            // Submit button executes JavaScript validation function before submitting form
             function submitForm(){
                 
                 if (!isAdult()) {

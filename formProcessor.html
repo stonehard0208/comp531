@@ -63,6 +63,7 @@
 
     params = new URL(url).searchParams;
 
+    // Extract query parameter from location and display key-value pairs in a two-column table
     document.getElementById("accName").innerHTML = params.get("accName");
     document.getElementById("disName").innerHTML = params.get("disName");
     document.getElementById("phone").innerHTML = params.get("phone");
@@ -79,6 +80,7 @@
     }
     document.getElementById("password1").innerHTML = showPasswordInStar();
 
+    // Hidden timestamp is rendered as human readable datetime
     function formatTimeStamp(time){
         let year = time.getFullYear();
         let month = time.getMonth() + 1;
