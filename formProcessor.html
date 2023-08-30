@@ -72,10 +72,9 @@
     document.getElementById("email").innerHTML = params.get("email");
     
     function showPasswordInStar(){
-        let starPassword = "";
-        for (let i = 0; i < params.get("password1").length; i++){
-            starPassword += "*";
-        }
+        let password = params.get("password1");
+        let starPassword = password.replace(/./g,"*")
+        console.log(starPassword);
         return starPassword;
     }
     document.getElementById("password1").innerHTML = showPasswordInStar();
